@@ -2,9 +2,12 @@ import unittest
 from flask import Flask
 from flask_testing import TestCase
 from werkzeug.datastructures import ImmutableMultiDict
-from flask_app import app  # Replace 'your_application_file' with the actual filename containing your Flask app
+from processing import calculate_bmi, get_bmi_category
 
-class TestFlask(TestCase):
+# Import your Flask application
+from flask_app import app
+
+class TestFlaskApp(TestCase):
     def create_app(self):
         app.config['TESTING'] = True
         return app
@@ -20,4 +23,4 @@ class TestFlask(TestCase):
             self.assertIn(b'Your BMI is', response.data)
 
 if __name__ == '__main__':
-    unittest.main() 
+    unittest.main()
