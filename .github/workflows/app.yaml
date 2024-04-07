@@ -21,16 +21,18 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install flask  # Install Flask as an example dependency
+        # Add any other dependencies your project requires
 
     - name: Run tests
       run: |
-        python manage.py test  # Adjust the test command as per your project structure
+        # Add commands to run tests, if applicable
 
     - name: Build
       run: |
-        python manage.py collectstatic --no-input  # If using Django, for example
+        # Add commands to build your project, if applicable
 
     - name: Deploy
       run: |
         # Add your deployment steps here
+
