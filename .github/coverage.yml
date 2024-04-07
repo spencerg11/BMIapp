@@ -21,15 +21,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install coverage
+          pip install coverage flask flask-testing
 
       - name: Run coverage
         run: |
-          # Run coverage without tests (placeholder command)
-          coverage run --source=BMIapp-1 --omit='*/tests/*' -m unittest discover
-
-      - name: Generate coverage report
-        run: |
+          coverage run --source=your_application_file -m unittest testFlask.py
           coverage xml -o coverage.xml
 
       - name: Upload coverage report
