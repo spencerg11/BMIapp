@@ -23,6 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install coverage
           pip install flask  # Install Flask package
+          pip install flask_testing  # Install flask_testing package
 
       - name: Run tests with coverage
         run: |
@@ -38,4 +39,5 @@ jobs:
         with:
           name: coverage-report
           path: coverage.xml
+
 
