@@ -20,8 +20,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install coverage
+          pip install flask  # Install Flask package
 
       - name: Run tests with coverage
         run: |
@@ -37,3 +38,4 @@ jobs:
         with:
           name: coverage-report
           path: coverage.xml
+
