@@ -20,4 +20,4 @@ class TestFlask(TestCase):
             self.assertIn(b'Your BMI is', response.data)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() 
