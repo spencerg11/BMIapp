@@ -1,0 +1,36 @@
+name: Python Web App CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Set your desired Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        python manage.py test  # Adjust the test command as per your project structure
+
+    - name: Build
+      run: |
+        python manage.py collectstatic --no-input  # If using Django, for example
+
+    - name: Deploy
+      run: |
+        # Add your deployment steps here
